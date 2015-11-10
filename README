@@ -1,0 +1,10 @@
+soul - Simple Object(Oriented) Utility Library
+
+Provides basic OOP features:
+    - Single Inheritance
+    - Construction
+    - Copying
+    - Type checking
+
+-- The MIT License (MIT)
+-- Copyright (c) 2015 Ryan M. Wackelin
