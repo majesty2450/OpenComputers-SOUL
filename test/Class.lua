@@ -3,7 +3,7 @@
 
 --------------------------------------------------------------------------
 -- @module  Class
--- 
+--
 -- @test
 --------------------------------------------------------------------------
 
@@ -13,7 +13,7 @@ dev.defaultPackages()
 local Class = require("soul/Class")
 
 -- Interface
--- 
+--
 local Tastable = {}
 
 function Tastable:taste ()
@@ -21,9 +21,8 @@ function Tastable:taste ()
 end
 
 -- Base Class
--- 
-local Pizza = Class:extend()
-Pizza:implement(Tastable)
+--
+local Pizza = Class:extend(Tastable)
 
 function Pizza:__init (name)
     Class.__init(self)
@@ -31,7 +30,7 @@ function Pizza:__init (name)
 end
 
 -- Sub Class
--- 
+--
 local CheesePizza = Pizza:extend()
 
 function CheesePizza:__init ()
@@ -43,7 +42,9 @@ function CheesePizza:taste ()
 end
 
 -- Results
--- 
+--
 local instance = CheesePizza:new()
 instance:taste()
 
+local instance2 = Pizza:new()
+instance2:taste()
