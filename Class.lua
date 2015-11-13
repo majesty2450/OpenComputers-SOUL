@@ -156,7 +156,8 @@ end
 -- @desc    Used as a means of type-checking 'Class' instances and tables.
 --
 -- @summary Checks if other is equal to self or if other is an ancestor of
---          self.
+--          self. Also checks if other in implemented by self through key
+--          checking.
 --
 -- @param   self    Table to perform operations on.
 -- @param   other   Class to type-check against.
@@ -175,6 +176,12 @@ function Class:isa (other)
         end
         parent = parent.__super
     end
+
+    -- If super check fails, check for implementation of functions
+    if Mixin.hasa(self, other, "function") then
+        return true
+    end
+
     return false
 end
 
