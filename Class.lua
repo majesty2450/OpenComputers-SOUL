@@ -76,16 +76,12 @@ function Class:implement (...)
 
         for k, v2 in pairs(Class) do
             if v[k] then
-                continue = false
+                error("Cannot implement '" .. v .. "', reason: 'Class' keys \
+                    found")
             end
         end
 
-        if continue then
-            self:include(v)
-        else
-            error("Cannot implement '" .. v .. "', reason: 'Class' keys \
-                found")
-        end
+        self:include(v)
     end
 end
 
