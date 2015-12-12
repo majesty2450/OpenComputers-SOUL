@@ -74,8 +74,8 @@ function Class:implement (...)
     for i, v in ipairs(args) do
         for k, v2 in pairs(Class) do
             if v[k] then
-                error("Cannot implement '" .. v .. "', reason: 'Class' keys \
-                    found")
+                error("Cannot implement '" .. v .. "', reason: 'Class' \
+                       keys found")
             end
         end
 
