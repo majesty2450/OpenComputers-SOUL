@@ -72,8 +72,6 @@ function Class:implement (...)
     local args = {...}
 
     for i, v in ipairs(args) do
-        local continue = true
-
         for k, v2 in pairs(Class) do
             if v[k] then
                 error("Cannot implement '" .. v .. "', reason: 'Class' keys \
